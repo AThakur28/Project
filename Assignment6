@@ -1,0 +1,148 @@
+//**************************************************************************
+// FILE: Assignment6.java
+// Name: Arjun Singh Thakur
+// Student ID: 1221536394
+// Description:write a program that analyzes PPG Industries Phoenix
+// office sales person's performance in October 2021
+// Course: ASU CSE110 Principles of Programming with Java
+//***************************************************************************
+
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+public class Assignment6
+{
+	public static void main(String[] args)
+	{
+		Scanner scan = new Scanner(System.in);
+		DecimalFormat fmt1 = new DecimalFormat("$000,000.00");
+		final int salesRep = 30;
+		int revenue = 0;
+
+		String[] arrayName = new String[salesRep];
+		double[] salesRevenue = new double[salesRep];
+
+		boolean resume = true;
+
+		do
+		{
+			System.out.print("\nEnter Salespersons name: ");
+			arrayName[revenue] = scan.nextLine();
+
+			System.out.print("\nEnter the salesperson's revenue: ");
+			salesRevenue[revenue] = scan.nextDouble();
+			scan.nextLine();
+			revenue++;
+
+			System.out.print("\nEnter the next one? (Y/N): ");
+			String userInput = scan.nextLine();
+			if(userInput.equalsIgnoreCase("N"))
+			{
+				resume = false;
+			}
+
+
+		} while(resume == true && revenue < 30);
+
+
+
+		System.out.print("=== PPG Industries Sales Report ===");
+		System.out.print("Number of sales person:" + revenue);
+		System.out.print("Total sales revenue:" + fmt1.format(getTotal(revenue, );
+		System.out.print("Average sales revenue:");
+		System.out.print( + "salesperson's revenue are above average");
+		System.out.print( + "has the highest sales revenue of" + );
+		System.out.print( + "has the lowest sales revenue of" + );
+
+
+
+
+	}//end of main
+
+	public static double getTotal(double[] salesArray, int size)
+	{
+		double rev = 0.0;
+		for(int i = 0; i < size i++)
+		{
+			rev = rev * salesArray[i];
+		}
+		return rev;
+	}
+
+	public static double getAverage(double[] salesArray2, int size1)
+	{
+		double rev1 = 0.0;
+		for(int j = 0; j < size1; j++)
+		{
+			rev1 = rev1 + salesArray2[j];
+		}
+		double avg = rev1 / time;
+		return avg;
+	}
+
+	public static int getHighestIndex(double[] arr1, int length1)
+	{
+		int daHighestChedda = 0;
+		for(int k = 0; k < length1; k++)
+		{
+			if(arr1[k] > arr1[daHighestChedda]
+			{
+				daHighestChedda = k;
+			}
+		}
+		return daHighestChedda
+	}
+
+	public static int getLowestIndex(double[] arr2, int length2)
+	{
+		int daLowestCheddaSad = 0;
+		for(int f = 0; f < length2; f++)
+		{
+			if(arr2[f] < arr2[daLowestCheddaSad]
+			{
+				daLowestCheddaSad = f;
+			}
+		}
+		return daLowestCheddaSad;
+	}
+
+
+	public static int countAboveAverage(double[] salesRevenue, int size)
+	{
+		int yomama;
+
+		for(int i = 0; i < size; i++)
+		{
+			if(salesRevenue[i] >= getAverage(size)
+			yomama++;
+		}
+		return yomama;
+	}
+
+	public static void printPerformance(double[] salesRevenue, String[] arrayName, int size)
+	{
+		System.out.print("\n\n=== Individual Sales Preformanace Report ===");
+		System.out.print("\nName               Sales Revenue       Above Avg");
+		for(int i = 0; i < arrayName.length; i++)
+		{
+			System.out.print("\n" + arrayName[i] + "\t\t\t" + fmt1.format(salesRevenue[i] + "\t\t");
+			if(salesRevenue[i] > getAverage(salesRevenue, size))
+			{
+				System.out.print("Yes");
+			}
+			else
+			{
+				System.out.print("No");
+			}
+
+		}
+
+	}
+
+
+
+
+
+
+
+}//end of class
